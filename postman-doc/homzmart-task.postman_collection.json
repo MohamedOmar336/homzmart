@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "be1d365f-3405-4fe5-ac27-24174e4ccc91",
+		"name": "homzmart-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "ForgetPassword",
+					"item": [
+						{
+							"name": "forgetPassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "b2b.supplier.b2b@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/forgotPassword",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"forgotPassword"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "dfgdsfsd@msail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "en",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "011230034161s",
+									"description": "required|unique",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "required|mimes:png,jpeg,jpg,svg",
+									"type": "file",
+									"src": "NwwA0HNN9/WhatsApp Image 2022-03-12 at 8.10.45 AM.jpeg"
+								},
+								{
+									"key": "first_name",
+									"value": "fdsdfsdqw",
+									"description": "required|max:191",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "fsdqw",
+									"description": "required|max:191",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sasqw@msail.com",
+									"description": "required|email|max:191|unique",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"description": "required|min:8|max:25",
+									"type": "text"
+								},
+								{
+									"key": "confirmation_password",
+									"value": "123456789",
+									"description": "same:password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "011230034161",
+									"description": "required|unique",
+									"type": "text"
+								},
+								{
+									"key": "country_code",
+									"value": "EG",
+									"description": "required|exists:countries,code",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "required|mimes:png,jpeg,jpg,svg",
+									"type": "file",
+									"src": "/C:/Users/Mohamed Omar/Downloads/wallpaperflare.com_wallpaper.jpg"
+								},
+								{
+									"key": "first_name",
+									"value": "mohamedddd",
+									"description": "required|max:191",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "omarrrr",
+									"description": "required|max:191",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "m.test@mail.com",
+									"description": "required|email|max:191|unique",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/updateAccount",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateAccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
